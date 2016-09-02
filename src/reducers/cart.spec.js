@@ -1,5 +1,4 @@
-import expect from 'expect'
-import cart from '../../reducers/cart'
+import cart from './cart'
 
 describe('reducers', () => {
   describe('cart', () => {
