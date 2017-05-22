@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Cart from './Cart'
+import Basket from './Basket'
 import Product from './Product'
 
 const setup = (total, products = []) => {
@@ -9,7 +9,7 @@ const setup = (total, products = []) => {
   }
 
   const component = shallow(
-    <Cart products={products} total={total} {...actions} />
+    <Basket products={products} total={total} {...actions} />
   )
 
   return {
@@ -22,7 +22,7 @@ const setup = (total, products = []) => {
   }
 }
 
-describe('Cart component', () => {
+describe('Basket component', () => {
   it('should display total', () => {
     const { p } = setup('76')
     expect(p.text()).toMatch(/^Total: \$76/)
@@ -30,7 +30,7 @@ describe('Cart component', () => {
 
   it('should display add some products message', () => {
     const { em } = setup()
-    expect(em.text()).toMatch(/^Please add some products to cart/)
+    expect(em.text()).toMatch(/^Please add some products to basket/)
   })
 
   it('should disable button', () => {

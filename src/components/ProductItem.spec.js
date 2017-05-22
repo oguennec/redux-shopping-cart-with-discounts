@@ -5,7 +5,7 @@ import ProductItem from './ProductItem'
 
 const setup = product => {
   const actions = {
-    onAddToCartClicked: jest.fn()
+    onAddToBasketClicked: jest.fn()
   }
 
   const component = shallow(
@@ -36,9 +36,9 @@ describe('ProductItem component', () => {
     expect(product.props()).toEqual({ title: 'Product 1', price: 9.99 })
   })
 
-  it('should render Add To Cart message', () => {
+  it('should render Add To Basket message', () => {
     const { button } = setup(productProps)
-    expect(button.text()).toMatch(/^Add to cart/)
+    expect(button.text()).toMatch(/^Add to basket/)
   })
 
   it('should not disable button', () => {
@@ -49,7 +49,7 @@ describe('ProductItem component', () => {
   it('should call action on button click', () => {
     const { button, actions } = setup(productProps)
     button.simulate('click')
-    expect(actions.onAddToCartClicked).toBeCalled()
+    expect(actions.onAddToBasketClicked).toBeCalled()
   })
 
   describe('when product inventory is 0', () => {

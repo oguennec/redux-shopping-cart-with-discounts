@@ -55,10 +55,10 @@ describe('reducers', () => {
         ])
       })
 
-      describe('when an item is added to the cart', () => {
+      describe('when an item is added to the basket', () => {
 
         beforeEach(() => {
-          state = reducer(state, { type: 'ADD_TO_CART', productId: 1 })
+          state = reducer(state, { type: 'ADD_TO_BASKET', productId: 1 })
         })
 
         it('the inventory is reduced', () => {

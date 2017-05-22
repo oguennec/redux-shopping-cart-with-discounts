@@ -1,10 +1,10 @@
-import { getTotal, getCartProducts } from './index'
+import { getTotal, getBasketProducts } from './index'
 
 describe('selectors', () => {
   describe('getTotal', () => {
     it('should return price total', () => {
       const state = {
-        cart: {
+        basket: {
           addedIds: [ 1, 2, 3 ],
           quantityById: {
             1: 4,
@@ -33,10 +33,10 @@ describe('selectors', () => {
     })
   })
 
-  describe('getCartProducts', () => {
+  describe('getBasketProducts', () => {
     it('should return products with quantity', () => {
       const state = {
-        cart: {
+        basket: {
           addedIds: [ 1, 2, 3 ],
           quantityById: {
             1: 4,
@@ -62,7 +62,7 @@ describe('selectors', () => {
         }
       }
 
-      expect(getCartProducts(state)).toEqual([
+      expect(getBasketProducts(state)).toEqual([
         {
           id: 1,
           price: 1.99,

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
-import { RECEIVE_PRODUCTS, ADD_TO_CART } from '../constants/ActionTypes'
+import { RECEIVE_DISCOUNTS, RECEIVE_PRODUCTS, ADD_TO_BASKET } from '../constants/ActionTypes'
 
 const products = (state, action) => {
   switch (action.type) {
-    case ADD_TO_CART:
+    case ADD_TO_BASKET:
       return {
         ...state,
         inventory: state.inventory - 1
@@ -35,6 +35,21 @@ const byId = (state = {}, action) => {
   }
 }
 
+const discountById = (state = {}, action) => {
+  switch (action.type) {
+    case RECEIVE_DISCOUNTS:
+      return {
+        ...state,
+        ...action.discounts.reduce((obj, discount) => {
+          obj[discount.id] = discount
+          return obj
+        }, {})
+      }
+    default:
+      return state
+  }
+}
+
 const visibleIds = (state = [], action) => {
   switch (action.type) {
     case RECEIVE_PRODUCTS:
@@ -46,7 +61,8 @@ const visibleIds = (state = [], action) => {
 
 export default combineReducers({
   byId,
-  visibleIds
+  visibleIds,
+  discountById
 })
 
 export const getProduct = (state, id) =>
@@ -54,3 +70,9 @@ export const getProduct = (state, id) =>
 
 export const getVisibleProducts = state =>
   state.visibleIds.map(id => getProduct(state, id))
+
+export const getProductDiscount = (state, id) =>
+  state.discountById[id]
+
+export const getVisibleProductDiscounts = (state) =>
+  state.discountById
