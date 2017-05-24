@@ -7,8 +7,11 @@ A fruit shopping basket is taken as an example.
 The basket can contain any item multiple times until the stock (10 of each) is empty for this item.
 
 The receipt will display:
+
 • the shopping list with a subtotal
+
 • the list of discounts by item
+
 • the total after discount
 
 Items are priced as follows:
