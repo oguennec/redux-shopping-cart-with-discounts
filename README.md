@@ -1,6 +1,6 @@
 # This is an enhancement of the Redux Shopping Basket Example (below)
 
-A discount feature has been added following the style of the redux example.
+A discount feature has been added to the redux example.
 
 A fruit shopping basket is taken as an example.
 
@@ -8,23 +8,23 @@ The basket can contain any item multiple times until the stock (10 of each) is e
 
 The receipt will display:
 
-• the shopping list with a subtotal
+    • the shopping list with a subtotal
 
-• the list of discounts by item
+    • the list of discounts by item
 
-• the total after discount
+    • the total after discount
 
-Items are priced as follows:
+Items are priced as follows (showing discount when available):
 
-• Apples are 25 ct each
+    • Apples are 25 ct each
 
-• Oranges are 30 ct each
+    • Oranges are 30 ct each
 
-• Mangoes are 95 ct each, but are available as ‘two for the price of one’
+    • Mangoes are 95 ct each, but are available as ‘two for the price of one’
 
-• Bananas are 15 ct each, but are available as ‘five for the price of four’
+    • Bananas are 15 ct each, but are available as ‘five for the price of four’
 
-• Papayas are 50 ct each, but are available as ‘three for the price of two’
+    • Papayas are 50 ct each, but are available as ‘three for the price of two’
 
 # Redux Shopping Basket Example
 
